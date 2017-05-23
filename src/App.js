@@ -12,15 +12,16 @@ class App extends Component {
     }
   }
 
-  addThing() {
-    this.setState
-  }
+  // addThing() {
+  //   this.setState
+  // }
 
   render() {
     return (
       <div className="App">
         <Header/>
-        <ThingList things={this.state.things} addThing={this.addThing}/>
+        <button className="add-thing">Add Thing</button>
+        <ThingList things={this.state.things} /*addThing={this.addThing}*//>
       </div>
     );
   }
