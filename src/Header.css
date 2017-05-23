@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Chonburi%7CBioRhyme);
+
+h1 {
+  color: #F5B700;
+  font-family: Chonburi, serif;
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 0;
+  text-shadow: 7px 7px 0 rgba(0,0,0,0.1);
+}
+
+h2 {
+  font-family: BioRhyme, sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 0;
+}

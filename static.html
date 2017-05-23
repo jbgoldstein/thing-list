@@ -1,0 +1,64 @@
+<!DOCTYPE>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#00b4ff">
+    <title>Thing List</title>
+    <link rel="stylesheet" href="static.css">
+  </head>
+  <body>
+    <h1>ThingList</h1>
+    <h2>So Many Things</h2>
+    <div>
+      <button class="logout">Sign Out</button>
+      <button class="add-thing">Add Thing</button>
+      <ul class="things">
+        <li class="thing">
+          <input type="checkbox" value="on">
+          <div class="details">
+            <div class="name" contenteditable="true">
+              What's happening?
+            </div>
+            <span class="actions">
+              <button class="remove">
+                <i class="fa fa-trash-o"></i>
+              </button>
+            </span>
+          </div>
+        </li>
+        <li class="thing">
+          <input type="checkbox" value="on" checked>
+          <div class="details">
+            <div class="name" contenteditable="true">
+              Here's a thing!
+            </div>
+            <span class="actions">
+              <button class="remove">
+                <i class="fa fa-trash-o"></i>
+              </button>
+            </span>
+          </div>
+        </li>
+        <li class="thing">
+          <input type="checkbox" value="on">
+          <div class="details">
+            <div class="name" contenteditable="true">
+              It's another thing!
+            </div>
+            <span class="actions">
+              <button class="remove">
+                <i class="fa fa-trash-o"></i>
+              </button>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
