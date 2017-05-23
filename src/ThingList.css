@@ -1,0 +1,11 @@
+.ThingList {
+  position: relative;
+  list-style: none;
+  padding-left: 0;
+  max-width: 400px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+          box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+}
