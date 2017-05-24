@@ -4,12 +4,3 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-
-textarea.textBox {
-  border: 0;
-  border-radius: 5px;
-  width: 300px;
-  display: block;
-  margin: 0 auto;
-  padding: 10px;
-}

@@ -14,11 +14,10 @@ class App extends Component {
       'thing-3': { id: 'thing-3', name: 'Bibb lettuce' },
     },
     max: 4,
-    thing: '',
     }
 
     this.addThing = this.addThing.bind(this)
-    this.updateThing = this.updateThing.bind(this)
+    this.saveThing = this.saveThing.bind(this)
   }
 
   thing() {
@@ -37,23 +36,18 @@ class App extends Component {
     this.setState({ things })
   }
 
-  updateThing(ev) {
-        this.setState ({
-            thing: ev.target.value
-        })
-    }
+  saveThing(thing) {
+    const things = {...this.state.things}
+    things[thing.id] = thing
+    this.setState({ things })
+  }
 
   render() {
     return (
       <div className="App">
         <Header/>
-        <textarea className="textBox"
-          value={this.state.thing} 
-          placeholder="Enter thing here"
-          onChange={this.updateThing}>
-        </textarea>
         <AddThingButton addThing={this.addThing}/>
-        <ThingList things={this.state.things}/>
+        <ThingList things={this.state.things} saveThing={this.saveThing}/>
       </div>
     );
   }
