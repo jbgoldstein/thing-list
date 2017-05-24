@@ -1,7 +1,7 @@
 import React from 'react'
-import './RemoveThingButton.css'
+import './Actions.css'
 
-const RemoveThingButton = ({ thing, removeThing }) => {
+const Actions = ({ thing, removeThing }) => {
     return (
         <span className="actions">
                 <button 
@@ -14,4 +14,4 @@ const RemoveThingButton = ({ thing, removeThing }) => {
     )
 }
 
-export default RemoveThingButton
+export default Actions
