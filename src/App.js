@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from './Header.js'
 import ThingList from './ThingList.js'
 import AddThingButton from './AddThingButton.js'
+import base from './base.js'
 import './App.css'
 
 class App extends Component {
@@ -15,6 +16,16 @@ class App extends Component {
     this.addThing = this.addThing.bind(this)
     this.saveThing = this.saveThing.bind(this)
     this.removeThing = this.removeThing.bind(this)
+  }
+
+  componentWillMount() {
+    base.syncState(
+      'things',
+      {
+        context: this,
+        state: 'things'
+      }
+    )
   }
 
   thing() {
@@ -41,7 +52,7 @@ class App extends Component {
 
   removeThing(thing) {
     const things = {...this.state.things}
-    delete things[thing.id]
+    things[thing.id] = null
     this.setState({ things })
   }
 
