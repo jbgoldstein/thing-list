@@ -14,6 +14,7 @@ class App extends Component {
 
     this.addThing = this.addThing.bind(this)
     this.saveThing = this.saveThing.bind(this)
+    this.removeThing = this.removeThing.bind(this)
   }
 
   thing() {
@@ -38,12 +39,25 @@ class App extends Component {
     this.setState({ things })
   }
 
+  removeThing(thing) {
+    const things = {...this.state.things}
+    delete things[thing.id]
+    this.setState({ things })
+  }
+
   render() {
+    const actions= {
+      saveThing: this.saveThing,
+      removeThing: this.removeThing,
+    }
     return (
       <div className="App">
         <Header/>
         <AddThingButton addThing={this.addThing}/>
-        <ThingList things={this.state.things} saveThing={this.saveThing}/>
+        <ThingList 
+         things={this.state.things}
+         {...actions}
+         />
       </div>
     );
   }
