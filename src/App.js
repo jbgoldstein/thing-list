@@ -8,8 +8,12 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-    things: [],
-    max: 0,
+    things: {
+      'thing-1': { id: 'thing-1', name: 'Milk' },
+      'thing-2': { id: 'thing-2', name: 'Bread' },
+      'thing-3': { id: 'thing-3', name: 'Bibb lettuce' },
+    },
+    max: 4,
     thing: '',
     }
 
@@ -17,17 +21,20 @@ class App extends Component {
     this.updateThing = this.updateThing.bind(this)
   }
 
-  addThing(ev) {
-    const state = {...this.state}
-    const thing = {
-        id: 'thing-' + state.max,
-        name: state.thing,
+  thing() {
+    return {
+      id: `thing-${this.state.max}`,
+      name: '',
     }
+  }
 
-    state.things.push(thing)
-    state.max ++
-    state.thing = ''
-    this.setState(state)
+  addThing(ev) {
+    const things = {...this.state.things}
+    const thing = this.thing()
+    things[thing.id] = thing
+    
+    this.state.max ++
+    this.setState({ things })
   }
 
   updateThing(ev) {
@@ -45,8 +52,8 @@ class App extends Component {
           placeholder="Enter thing here"
           onChange={this.updateThing}>
         </textarea>
-        <AddThingButton />
-        <ThingList things={this.state.things} /*addThing={this.addThing}*//>
+        <AddThingButton addThing={this.addThing}/>
+        <ThingList things={this.state.things}/>
       </div>
     );
   }
