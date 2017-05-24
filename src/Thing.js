@@ -4,6 +4,10 @@ import Actions from './Actions.js'
 import './Thing.css'
 
 class Thing extends Component{
+    componentDidMount() {
+        this.nameInput.htmlEl.focus()
+    }
+
     updateName = (ev) => {
         const { thing, saveThing } = this.props
         thing.name = ev.target.value
@@ -20,6 +24,7 @@ class Thing extends Component{
                 className="name"
                 html={thing.name}
                 onChange={this.updateName}
+                ref={input => this.nameInput = input}
                 />
                 <Actions thing={thing} removeThing={removeThing}/>
             </div>
