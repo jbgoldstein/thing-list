@@ -32,6 +32,7 @@ class App extends Component {
     return {
       id: `thing-${this.state.max}`,
       name: '',
+      completed: false,
     }
   }
 

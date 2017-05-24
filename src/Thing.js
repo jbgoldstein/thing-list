@@ -16,6 +16,12 @@ class Thing extends Component{
         saveThing(thing)
     }
 
+    updateCheckbox = (ev) => {
+        const { thing, saveThing } = this.props
+        thing.completed = ev.target.checked
+        saveThing(thing)
+    }
+
     blurOnEnter = (ev) => {
         if (ev.key === 'Enter') {
             ev.preventDefault()
@@ -27,7 +33,11 @@ class Thing extends Component{
         const { thing, removeThing } = this.props
         return (
             <li className="Thing">
-            <input type="checkbox" value="on" />
+            <input 
+            type="checkbox" 
+            value="on" 
+            onChange={this.updateCheckbox} 
+            checked={thing.completed}/>
             <div className="details">
                 <ContentEditable
                 className="name"
