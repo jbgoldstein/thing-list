@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from './Header.js'
 import ThingList from './ThingList.js'
+import AddThingButton from './AddThingButton.js'
 import './App.css'
 
 class App extends Component {
@@ -44,7 +45,7 @@ class App extends Component {
           placeholder="Enter thing here"
           onChange={this.updateThing}>
         </textarea>
-        <button className="add-thing" onClick={this.addThing}>Add Thing</button>
+        <AddThingButton />
         <ThingList things={this.state.things} /*addThing={this.addThing}*//>
       </div>
     );
