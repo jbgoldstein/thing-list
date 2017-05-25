@@ -1,0 +1,10 @@
+.SignOut {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  display: block;
+  margin: 0 auto 1rem;
+  font-family: 'helvetica neue', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+}
