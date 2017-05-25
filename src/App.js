@@ -10,7 +10,6 @@ class App extends Component {
     super(props)
     this.state = {
     things: {},
-    max: 1,
     }
 
     this.addThing = this.addThing.bind(this)
@@ -30,7 +29,7 @@ class App extends Component {
 
   thing() {
     return {
-      id: `thing-${this.state.max}`,
+      id: `thing-${Date.now()}`,
       name: '',
       completed: false,
     }
@@ -40,8 +39,7 @@ class App extends Component {
     const things = {...this.state.things}
     const thing = this.thing()
     things[thing.id] = thing
-    
-    this.state.max ++
+
     this.setState({ things })
   }
 
