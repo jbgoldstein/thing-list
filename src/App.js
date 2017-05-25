@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Header from './Header.js'
 import ThingList from './ThingList.js'
 import AddThingButton from './AddThingButton.js'
-import base from './base.js'
+import base, { auth } from './base.js'
 import SignOut from './SignOut.js'
 import SignIn from './SignIn.js'
 import './App.css'
@@ -67,6 +67,12 @@ class App extends Component {
     return this.state.uid
   }
 
+  signOut = () => {
+    auth
+      .signOut()
+      .then(() => this.setState({ uid: null }))
+  }
+
   renderMain = () => {
     const actions= {
       saveThing: this.saveThing,
@@ -75,7 +81,7 @@ class App extends Component {
 
     return (
       <div>
-        <SignOut/>
+        <SignOut signOut={this.signOut}/>
         <AddThingButton addThing={this.addThing}/>
         <ThingList 
           things={this.state.things}
