@@ -4,6 +4,7 @@ import ThingList from './ThingList.js'
 import AddThingButton from './AddThingButton.js'
 import base from './base.js'
 import SignOut from './SignOut.js'
+import SignIn from './SignIn.js'
 import './App.css'
 
 class App extends Component {
@@ -65,6 +66,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
+        <SignIn/>
         <SignOut/>
         <AddThingButton addThing={this.addThing}/>
         <ThingList 
