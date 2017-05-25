@@ -32,6 +32,7 @@ class App extends Component {
       id: `thing-${Date.now()}`,
       name: '',
       completed: false,
+      dueOn: null,
     }
   }
 
